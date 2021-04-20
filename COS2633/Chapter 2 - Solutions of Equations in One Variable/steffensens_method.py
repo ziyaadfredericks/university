@@ -1,0 +1,1 @@
+# Finds the root of an equation in the range [a, b] by using Steffensen’s Method.
