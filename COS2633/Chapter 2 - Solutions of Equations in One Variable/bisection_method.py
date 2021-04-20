@@ -1,9 +1,9 @@
-# Finds the root of an equation in the range [a, b] by using the bisection method.
+# Finds the root of an equation in the range [a, b] by using the Bisection Method.
 
 import math
 
 def equation(x):
-	return pow(3 + x - 2 * pow(x, 2), 0.25)
+	return math.cos(x) - x #Original equation.
 
 def bisect(a, b, p):
 	if((equation(a) * equation(p)) > 0):
@@ -24,9 +24,12 @@ def display(i, listABP):
 	listABP = bisect(listABP[0], listABP[1], listABP[2])
 
 def main():
-#	n = int(input("n = "))
-	a = int(input("a = "))
-	b = int(input("b = "))
+#	a = int(input("a = "))
+	a = math.radians(int(input("a = ")))
+
+#	b = int(input("b = "))
+	b = math.radians(int(input("b = ")))
+	
 	print()
 	p = (a + b) / 2
 
