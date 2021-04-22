@@ -4,7 +4,8 @@
 using namespace std;
 
 int main() {
-	cout << "Hello, World!" << endl;
+	Bottle bottle1{};
+	Bottle bottle2{};
 
 	return 0;
 }
