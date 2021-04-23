@@ -8,18 +8,16 @@ float convertToCelsius(float temperatureC) {
 }
 
 int main(int argc, char* argv[]) {
-	QApplication app(argc, argv);
-	QInputDialog *input = new QInputDialog();
-	QMessageBox *messageBox= new QMessageBox();
+    QApplication app(argc, argv);
 
-	bool buttonClicked = false;
-	float temperatureC = input->getDouble(0, "Temperature Converter", "Enter the temperature in °C:", 0, -2147483647, 2147483647, 2, &buttonClicked);
+    bool buttonClicked = false;
+    float temperatureC = QInputDialog::getDouble(0, "Temperature Converter", "Enter the temperature in °C:", 0, -2147483647, 2147483647, 2, &buttonClicked);
 
 	QString temperatureF = QString("The temperature is %0°F.").arg(convertToCelsius(temperatureC));
 
 	if (buttonClicked) {
-		messageBox->information(0, "Temperature Converter", temperatureF);
-	}
+        QMessageBox::information(0, "Temperature Converter", temperatureF);
+    }
 
-	return 0;
+    return 0;
 }
