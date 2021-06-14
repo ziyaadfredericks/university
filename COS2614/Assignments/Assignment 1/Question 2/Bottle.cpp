@@ -3,14 +3,22 @@
 
 using namespace std;
 
-int capacity, quantity = 0;
-
 void Bottle::setCapacity(int c) {
 	capacity = c;
+
+	if(capacity < quantity) {
+		cout << "The bottle has overflowed. The quantity of liquid in the bottle will now be set to: " << capacity << "ml." << endl;
+		quantity = capacity;
+	}
 }
 
 void Bottle::setQuantity(int q) {
-	quantity = q;
+	if (q <= capacity) {
+		quantity = q;
+	} else {
+		cout << "The bottle has overflowed. The quantity of liquid in the bottle will now be set to: " << capacity << "ml." << endl;
+		quantity = capacity;
+	}
 }
 
 int Bottle::getCapacity() const {
