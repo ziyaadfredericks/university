@@ -3,7 +3,7 @@
 import math
 
 def equation(x):
-	return math.cos(x)
+	return 2 * pow(math.e, -x)
 
 def iterate(p0, i):
 	p = equation(p0)
@@ -13,16 +13,13 @@ def iterate(p0, i):
 		print(str(i) + ".) f(p) = " + str(equation(p)))
 		iterate(p, i + 1)
 	else:
-		print("\nFixed-point = (" + str((p, equation(p))) + ")")
+		print("\nFixed-point = (" + str((p0, equation(p))) + ")")
 
 def main():
-#	a = int(input("a = "))
-	a = math.radians(int(input("a = ")))
+	p0 = float(input("p0 = "))
+#	p0 = math.radians(float(input("p0 = ")))
 
-#	b = int(input("b = "))
-	b = math.radians(int(input("b = ")))
-
-	iterate((a + b) / 2, 1)
+	iterate(p0, 1)
 
 if __name__ == "__main__":
 	main()

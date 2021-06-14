@@ -3,10 +3,10 @@
 import math
 
 def equation(x):
-	return pow(x, 2) + 4 * x #Original equation.
+	return x * pow(math.e, x) - 2 #Original equation.
 
 def derivative(x):
-	return 2 * x + 4 #Derivative of original equation.
+	return pow(math.e, x) + x * pow(math.e, x) #Derivative of original equation.
 
 def newton(p0, i):
 	p = p0 - (equation(p0) / derivative(p0))

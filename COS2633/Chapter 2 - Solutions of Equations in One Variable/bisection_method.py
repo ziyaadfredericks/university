@@ -3,7 +3,7 @@
 import math
 
 def equation(x):
-	return math.cos(x) - x #Original equation.
+	return x * pow(math.e, x) - 2 #Original equation.
 
 def bisect(a, b, p):
 	if((equation(a) * equation(p)) > 0):
@@ -21,14 +21,12 @@ def display(i, listABP):
 	print(str(i + 1) + ".) p = " + str(listABP[2]))
 	print(str(i + 1) + ".) f(p) = " + str(equation(listABP[2])) + "\n")
 
-	listABP = bisect(listABP[0], listABP[1], listABP[2])
-
 def main():
-#	a = int(input("a = "))
-	a = math.radians(int(input("a = ")))
+	a = float(input("a = "))
+#	a = math.radians(int(input("a = ")))
 
-#	b = int(input("b = "))
-	b = math.radians(int(input("b = ")))
+	b = float(input("b = "))
+#	b = math.radians(int(input("b = ")))
 	
 	print()
 	p = (a + b) / 2
@@ -38,6 +36,7 @@ def main():
 	i = 0
 	while(equation(listABP[2]) != 0):
 		display(i, listABP)
+		listABP = bisect(listABP[0], listABP[1], listABP[2])
 		i += 1
 
 	display(i, listABP)
