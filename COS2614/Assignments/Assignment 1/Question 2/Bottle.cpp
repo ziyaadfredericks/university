@@ -4,6 +4,7 @@
 using namespace std;
 
 int capacity, quantity = 0;
+Bottle *ptrBottle = nullptr;
 
 void Bottle::setCapacity(int c) {
 	capacity = c;
@@ -27,4 +28,12 @@ void Bottle::fill() {
 
 void Bottle::empty() {
 	quantity = 0;
+}
+
+Bottle* Bottle::getPtr() {
+	return ptrBottle;
+}
+
+void Bottle::setPtr(Bottle *p) {
+	ptrBottle = p;
 }

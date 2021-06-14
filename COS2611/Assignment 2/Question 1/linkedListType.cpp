@@ -1,8 +1,6 @@
 #include <iostream>
 #include "linkedListType.h"
 
-using namespace std;
-
 template<class Type>
 Type linkedListType<Type>::max() {
 	Type maximum;

@@ -71,7 +71,8 @@ void action(int &choice, Bottle *ptrBottle) {
 
 int main() {
 	Bottle bottles[2];
-	Bottle *ptrBottle;
+	//Bottle *ptrBottle;
+
 	introduction(bottles);
 
 	int choice = -1;
@@ -79,14 +80,16 @@ int main() {
 	int selected = choice;
 
 	while (choice != 0) {
-		ptrBottle = &bottles[selected - 1];
+		//ptrBottle = &bottles[selected - 1];
+		bottles[0].setPtr(&bottles[selected - 1]);
 
 		if (choice == 7) {
 			mainMenu(choice);
 			selected = choice;
 		} else {
 			bottleMenu(choice, selected);
-			action(choice, ptrBottle);
+			//action(choice, ptrBottle);
+			action(choice, bottles[0].getPtr());
 		}
 	}
 
