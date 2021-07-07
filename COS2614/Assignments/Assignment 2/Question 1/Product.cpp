@@ -10,10 +10,7 @@ Product::Product(QString d, int sc, int n, double p) {
 
 void Product::sell(int n) {
 	m_NoOfItems -= n;
-	Transaction transaction;
-	transaction.m_NoOfItems = n;
-	transaction.m_PricePerItem = m_PricePerItem;
-	transaction.m_TransactionDate = QDate::currentDate();
+	Transaction transaction(n, m_PricePerItem, QDate::currentDate());
 	m_Transactions.append(transaction);
 }
 
@@ -37,10 +34,7 @@ QString Product::toString() {
 }
 
 void Product::removeAll() {
-	Transaction transaction;
-	transaction.m_NoOfItems = m_NoOfItems;
-	transaction.m_PricePerItem = 0;
-	transaction.m_TransactionDate = QDate::currentDate();
+	Transaction transaction(m_NoOfItems, 0, QDate::currentDate());
 	m_NoOfItems = 0;
 }
 

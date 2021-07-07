@@ -5,6 +5,8 @@
 
 class Transaction {
 public:
+	Transaction(int m_NoOfItems, double m_PricePerItem, QDate m_TransactionDate);
+
 	QString toString();
 
 private:
