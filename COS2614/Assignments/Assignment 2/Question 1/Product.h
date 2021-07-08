@@ -1,10 +1,10 @@
+#ifndef QUESTION_1_PRODUCT_H
+#define QUESTION_1_PRODUCT_H
+
 #include <QString>
 #include <QDate>
 #include <QList>
 #include "Transaction.h"
-
-#ifndef QUESTION_1_PRODUCT_H
-#define QUESTION_1_PRODUCT_H
 
 class Product {
 public:
