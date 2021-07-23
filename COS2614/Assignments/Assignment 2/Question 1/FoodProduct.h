@@ -6,11 +6,9 @@
 
 class FoodProduct : public Product {
 public:
-	//FoodProduct(QString d1, int sc1, int n1, double p1, QString d, int sc, int n, double p, QDate sbd);
-
 	FoodProduct(QString d, int sc, int n, double p, QDate sbd);
 
-	void sell();
+	void sell(int n);
 
 	QString toString();
 

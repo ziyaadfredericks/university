@@ -3,9 +3,9 @@
 #include "Transaction.h"
 
 Transaction::Transaction(int m_NoOfItems, double m_PricePerItem, QDate m_TransactionDate) {
-	this->m_NoOfItems = m_NoOfItems;
-	this->m_PricePerItem = m_PricePerItem;
-	this->m_TransactionDate = m_TransactionDate;
+	m_NoOfItems = m_NoOfItems;
+	m_PricePerItem = m_PricePerItem;
+	m_TransactionDate = m_TransactionDate;
 }
 
 QString Transaction::toString() {

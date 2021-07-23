@@ -2,10 +2,10 @@
 #include "Product.h"
 
 Product::Product(QString d, int sc, int n, double p) {
-	this->m_Description = d;
-	this->m_SupplierCode = sc;
-	this->m_NoOfItems = n;
-	this->m_PricePerItem = p;
+	m_Description = d;
+	m_SupplierCode = sc;
+	m_NoOfItems = n;
+	m_PricePerItem = p;
 }
 
 void Product::sell(int n) {
@@ -39,9 +39,5 @@ void Product::removeAll() {
 }
 
 bool Product::isExpired() {
-	if (m_Description == "food") {
-		return true;
-	} else {
-		return false;
-	}
+	return false;
 }
