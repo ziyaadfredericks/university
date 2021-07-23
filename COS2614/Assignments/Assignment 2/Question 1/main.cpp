@@ -1,5 +1,7 @@
 #include <QCoreApplication>
 #include "Transaction.h"
+#include "FoodProduct.h"
+#include "Product.h"
 
 int main(int argc, char *argv[]) {
 	QCoreApplication a(argc, argv);

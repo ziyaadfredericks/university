@@ -14,6 +14,7 @@ QString FoodProduct::toString() {
 }
 
 bool FoodProduct::isExpired() {
+	// Assuming that the "sell by date" is the "expiry date."
 	if (QDate::currentDate().daysTo(m_SellByDate) <= 0) {
 		return true;
 	} else {
