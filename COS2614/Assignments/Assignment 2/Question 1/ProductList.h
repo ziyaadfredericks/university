@@ -3,8 +3,18 @@
 
 #include "Product.h"
 
-class ProductList : QList<Product> {
+class ProductList : QList<Product *> {
+public:
+	int add(Product *p);
 
+	void sell(int pc, int n);
+
+	void remove(int pc);
+
+	void deleteAll();
+
+private:
+	bool codeUsed(int pc);
 };
 
 #endif

@@ -2,10 +2,10 @@
 #include <QDate>
 #include "Transaction.h"
 
-Transaction::Transaction(int m_NoOfItems, double m_PricePerItem, QDate m_TransactionDate) {
-	m_NoOfItems = m_NoOfItems;
-	m_PricePerItem = m_PricePerItem;
-	m_TransactionDate = m_TransactionDate;
+Transaction::Transaction(int n, double p, QDate td) {
+	m_NoOfItems = n;
+	m_PricePerItem = p;
+	m_TransactionDate = td;
 }
 
 QString Transaction::toString() {

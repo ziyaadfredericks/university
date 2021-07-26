@@ -16,7 +16,7 @@ public:
 
 private:
 	QDate m_SellByDate;
-	int DISCOUNT;
+	const int DISCOUNT = 0;
 };
 
 #endif
