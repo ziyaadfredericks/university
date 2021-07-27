@@ -1,3 +1,4 @@
+#include <iostream>
 #include "ProductList.h"
 #include "Product.h"
 
@@ -49,4 +50,13 @@ bool ProductList::codeUsed(int pc) {
 		}
 	}
 	return false;
+}
+
+void ProductList::printAll() {
+	ProductList::const_iterator i;
+	for (i = ProductList::constBegin(); i != ProductList::constEnd(); ++i) {
+		Product *product = *i;
+//		product->toString();
+		std::cout << product->toString().toStdString() << "\n\n";
+	}
 }

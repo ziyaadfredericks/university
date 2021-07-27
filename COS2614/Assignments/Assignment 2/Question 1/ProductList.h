@@ -13,6 +13,8 @@ public:
 
 	void deleteAll();
 
+	void printAll();
+
 private:
 	bool codeUsed(int pc);
 };

@@ -6,6 +6,7 @@ Product::Product(QString d, int sc, int n, double p) {
 	m_SupplierCode = sc;
 	m_NoOfItems = n;
 	m_PricePerItem = p;
+	m_DateSupplied = QDate::currentDate();
 }
 
 void Product::sell(int n) {
