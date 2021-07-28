@@ -8,6 +8,8 @@
 
 class Product {
 public:
+	Product();
+
 	Product(QString d, int sc, int n, double p);
 
 	void sell(int n);
@@ -26,11 +28,11 @@ public:
 
 private:
 	QString m_Description;
-	int m_SupplierCode;
-	int m_NoOfItems;
+	int m_SupplierCode{};
+	int m_NoOfItems{};
 	QDate m_DateSupplied;
-	double m_PricePerItem;
-	int m_ProductCode;
+	double m_PricePerItem{};
+	int m_ProductCode{};
 	QList<Transaction> m_Transactions;
 };
 

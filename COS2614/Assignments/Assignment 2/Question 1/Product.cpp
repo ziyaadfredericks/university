@@ -1,8 +1,11 @@
 #include <QString>
+#include <utility>
 #include "Product.h"
 
+Product::Product() = default;
+
 Product::Product(QString d, int sc, int n, double p) {
-	m_Description = d;
+	m_Description = std::move(d);
 	m_SupplierCode = sc;
 	m_NoOfItems = n;
 	m_PricePerItem = p;
