@@ -31,7 +31,7 @@ int Product::getProductCode() {
 }
 
 QString Product::toString() {
-	return QStringLiteral("Description: %0 \nSupplier code: %1 \nNumber of items: %2 \nDate supplied: %3 \nPrice per item: %4"
+	return QStringLiteral("Description: %0 \nSupplier code: %1 \nNumber of items: %2 \nDate supplied: %3 \nPrice per item: R%4"
 						  "\nProduct code: %5")
 			.arg(m_Description).arg(getSupplierCode()).arg(m_NoOfItems).arg(m_DateSupplied.toString()).arg(m_PricePerItem)
 			.arg(getProductCode());

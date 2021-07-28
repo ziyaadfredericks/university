@@ -10,7 +10,7 @@ void FoodProduct::sell(int n) {
 }
 
 QString FoodProduct::toString() {
-	QString qString = Product::toString() + "\b" + m_SellByDate.toString() + "\n";
+	QString qString = Product::toString() + "\n" + m_SellByDate.toString() + "\n";
 	return qString;
 }
 
@@ -22,3 +22,5 @@ bool FoodProduct::isExpired() {
 		return false;
 	}
 }
+
+FoodProduct::FoodProduct() = default;

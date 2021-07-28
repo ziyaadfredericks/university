@@ -6,6 +6,8 @@
 
 class FoodProduct : public Product {
 public:
+	FoodProduct();
+
 	FoodProduct(QString d, int sc, int n, double p, QDate sbd);
 
 	void sell(int n);

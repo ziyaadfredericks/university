@@ -1,6 +1,7 @@
 #include <iostream>
 #include "ProductList.h"
 #include "Product.h"
+#include "FoodProduct.h"
 
 int ProductList::add(Product *p) {
 	int productCode = p->getSupplierCode() * 1000 + 1;
@@ -54,9 +55,15 @@ bool ProductList::codeUsed(int pc) {
 
 void ProductList::printAll() {
 	ProductList::const_iterator i;
+	int j = 0;
 	for (i = ProductList::constBegin(); i != ProductList::constEnd(); ++i) {
-		Product *product = *i;
-//		product->toString();
-		std::cout << product->toString().toStdString() << "\n\n";
+		if (j % 2 == 0) {
+			Product *product = *i;
+			std::cout << product->toString().toStdString() << "\n\n";
+		} else {
+			auto *product = (FoodProduct *) *i;
+			std::cout << product->toString().toStdString() << "\n";
+		}
+		j++;
 	}
 }
