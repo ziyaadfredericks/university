@@ -2,8 +2,6 @@
 #include <utility>
 #include "Product.h"
 
-Product::Product() = default;
-
 Product::Product(QString d, int sc, int n, double p) {
 	m_Description = std::move(d);
 	m_SupplierCode = sc;

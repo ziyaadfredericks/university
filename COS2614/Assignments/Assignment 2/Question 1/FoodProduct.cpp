@@ -22,5 +22,3 @@ bool FoodProduct::isExpired() {
 		return false;
 	}
 }
-
-FoodProduct::FoodProduct() = default;

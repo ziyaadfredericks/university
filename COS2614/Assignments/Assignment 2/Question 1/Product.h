@@ -8,8 +8,6 @@
 
 class Product {
 public:
-	Product();
-
 	Product(QString d, int sc, int n, double p);
 
 	void sell(int n);
