@@ -37,6 +37,7 @@ QString Product::toString() {
 
 void Product::removeAll() {
 	Transaction transaction(m_NoOfItems, 0, QDate::currentDate());
+	m_Transactions.append(transaction);
 	m_NoOfItems = 0;
 }
 
