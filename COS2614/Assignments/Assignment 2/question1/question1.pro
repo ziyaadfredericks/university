@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2021-07-31T09:19:49
+# Project created by QtCreator 2021-07-31T09:26:31
 #
 #-------------------------------------------------
 
@@ -15,14 +15,4 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 
-SOURCES += main.cpp \
-    FoodProduct.cpp \
-    Product.cpp \
-    ProductList.cpp \
-    Transaction.cpp
-
-HEADERS += \
-    FoodProduct.h \
-    Product.h \
-    ProductList.h \
-    Transaction.h
+SOURCES += main.cpp
