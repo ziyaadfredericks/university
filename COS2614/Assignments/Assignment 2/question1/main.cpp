@@ -4,17 +4,17 @@
 #include "Product.h"
 #include "ProductList.h"
 
-// I used the following libraries because QVector seemed to cause segfaults with the GCC and Clang compilers, but not with MSVC
-// and QRandomGenerator did not seem to work when I tested it in UNISA's version of Qt.
-#include <vector>
+// I used the following libraries because QRandomGenerator did not seem to work when I tested it with the prescribed version of Qt.
 #include <stdlib.h>
 #include <time.h>
 
 void addProducts(ProductList *productList) {
-	//	The following for-loop will add 10 random food and non-food items to the list of available products.
+	//	Add 10 random perishable and non-perishable items to the list of available products.
 	//	The number of items, price of those items, and the sell by dates will all be randomly generated.
+
 	for (int i = 0; i < 10; ++i) {
-		srand(time(NULL) + i); // Add "i" because srand does not produce a different psuedo-random number due to the for-loop executing before the system time changes.
+		srand(time(NULL) + i); // Adding "i" because srand does not produce a different psuedo-random number due to the for-loop executing its next iteration before the system time changes?
+
 		int numberOfItems = rand() % 1000 + 100;
 		double price = (rand() % 50000 + 100) / 100.00;
 		QDate sellByDate = QDate::currentDate().addDays(rand() % 365 + 7);
@@ -36,7 +36,7 @@ void sellProducts(ProductList *productList) {
 }
 
 void removeProducts(ProductList *productList) {
-	//	The following for-loop will remove all non-perishable products from the list of available products.
+	//	Remove all non-perishable products from the list of available products.
 	for (int i = 0; i < 10; i += 2) {
 		productList->remove(((i + 1) * 1000) + 1);
 	}
