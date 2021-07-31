@@ -27,13 +27,29 @@ QString convertToBin (int num) {
 }
 
 QString convertToHex (int num) {
-	QString hexString;
+	QString hexString = "";
 
-	std::stringstream ss;
-	ss<< std::hex << num; // int decimal_value
-	std::string res ( ss.str() );
+	char hexaDeciNum[100];
 
-	std::cout << res;
+	int i = 0;
+	while (num != 0) {
+	  int remainder = num % 16;
+
+	  if (remainder < 10) {
+		hexaDeciNum[i] = remainder + 48;
+	  } else {
+		hexaDeciNum[i] = remainder + 55;
+	  }
+
+	  i++;
+
+	  num = num / 16;
+	}
+
+	// printing hexadecimal number array in reverse order
+	for (int j = i - 1; j >= 0; j--) {
+		hexString.append(hexaDeciNum[j]);
+	}
 
 	return hexString;
 }
