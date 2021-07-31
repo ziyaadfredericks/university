@@ -15,6 +15,15 @@ class MainWindow : public QMainWindow
 		explicit MainWindow(QWidget *parent = 0);
 		~MainWindow();
 
+	private slots:
+		void on_convertButton_clicked();
+
+		void on_clearAllButton_clicked();
+
+		void on_binaryLCD_overflow();
+
+		void on_hexLCD_overflow();
+
 	private:
 		Ui::MainWindow *ui;
 };
