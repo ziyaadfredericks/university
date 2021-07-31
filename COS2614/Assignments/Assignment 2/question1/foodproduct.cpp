@@ -10,7 +10,7 @@ void FoodProduct::sell(int n) {
 }
 
 QString FoodProduct::toString() {
-	QString qString = Product::toString() + "\n" + m_SellByDate.toString() + "\n";
+	QString qString = Product::toString() + "\nSell by date: " + m_SellByDate.toString() + "\n";
 	return qString;
 }
 

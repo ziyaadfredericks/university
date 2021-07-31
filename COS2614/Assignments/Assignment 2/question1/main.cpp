@@ -1,20 +1,23 @@
 #include <QCoreApplication>
-#include <iostream>
-#include <vector>
-#include <QRandomGenerator>
 #include "Transaction.h"
 #include "FoodProduct.h"
 #include "Product.h"
 #include "ProductList.h"
 
+// I used the following libraries because QVector seemed to cause segfaults with the GCC and Clang compilers, but not with MSVC
+// and QRandomGenerator did not seem to work when I tested it in UNISA's version of Qt.
+#include <vector>
+#include <stdlib.h>
+#include <time.h>
+
 void addProducts(ProductList *productList) {
 	//	The following for-loop will add 10 random food and non-food items to the list of available products.
 	//	The number of items, price of those items, and the sell by dates will all be randomly generated.
 	for (int i = 0; i < 10; ++i) {
-		QRandomGenerator qRandomGenerator;
-		int numberOfItems = QRandomGenerator::global()->bounded(100, 1000);
-		double price = QRandomGenerator::global()->bounded(50000) / 100.00;
-		QDate sellByDate = QDate::currentDate().addDays(qRandomGenerator.bounded(7, 365));
+		srand(time(NULL) + i); // Add "i" because srand does not produce a different psuedo-random number due to the for-loop executing before the system time changes.
+		int numberOfItems = rand() % 1000 + 100;
+		double price = (rand() % 50000 + 100) / 100.00;
+		QDate sellByDate = QDate::currentDate().addDays(rand() % 365 + 7);
 
 		if (i % 2 == 0) {
 			productList->add(new Product("non-perishable item " + QString::number(i + 1), i + 1, numberOfItems, price));
@@ -25,10 +28,10 @@ void addProducts(ProductList *productList) {
 }
 
 void sellProducts(ProductList *productList) {
-	//	The following for-loop will make 10 random sales.
 	//	The number of items will be randomly generated, within the bounds of the possible number of items.
 	for (int i = 0; i < 10; ++i) {
-		productList->sell(((i + 1) * 1000) + 1, QRandomGenerator::global()->bounded(1, 100));
+		srand(time(NULL) + i);
+		productList->sell(((i + 1) * 1000) + 1, rand() % 100 + 1);
 	}
 }
 
