@@ -1,0 +1,241 @@
+*****************************************************************
+* MZ Fredericks
+* 11303867
+* COS2614
+* Assignment 2
+* This program will test all member functions of ProductList.
+*****************************************************************
+
+
+*ADD PRODUCTS TO LIST THEN PRINT LIST OF PRODUCTS*
+
+Description: non-perishable item 1
+Supplier code: 1
+Number of items: 248
+Date supplied: Sat Jul 31 2021
+Price per item: R207.8
+Product code: 1001
+
+Description: perishable item 2
+Supplier code: 2
+Number of items: 269
+Date supplied: Sat Jul 31 2021
+Price per item: R314.63
+Product code: 2001
+Sell by date: Thu Nov 4 2021
+
+Description: non-perishable item 3
+Supplier code: 3
+Number of items: 224
+Date supplied: Sat Jul 31 2021
+Price per item: R177.55
+Product code: 3001
+
+Description: perishable item 4
+Supplier code: 4
+Number of items: 498
+Date supplied: Sat Jul 31 2021
+Price per item: R93.51
+Product code: 4001
+Sell by date: Wed Apr 6 2022
+
+Description: non-perishable item 5
+Supplier code: 5
+Number of items: 589
+Date supplied: Sat Jul 31 2021
+Price per item: R40.69
+Product code: 5001
+
+Description: perishable item 6
+Supplier code: 6
+Number of items: 275
+Date supplied: Sat Jul 31 2021
+Price per item: R231.21
+Product code: 6001
+Sell by date: Fri Mar 18 2022
+
+Description: non-perishable item 7
+Supplier code: 7
+Number of items: 890
+Date supplied: Sat Jul 31 2021
+Price per item: R275.42
+Product code: 7001
+
+Description: perishable item 8
+Supplier code: 8
+Number of items: 826
+Date supplied: Sat Jul 31 2021
+Price per item: R234.6
+Product code: 8001
+Sell by date: Thu Dec 9 2021
+
+Description: non-perishable item 9
+Supplier code: 9
+Number of items: 397
+Date supplied: Sat Jul 31 2021
+Price per item: R86.49
+Product code: 9001
+
+Description: perishable item 10
+Supplier code: 10
+Number of items: 963
+Date supplied: Sat Jul 31 2021
+Price per item: R120.11
+Product code: 10001
+Sell by date: Fri Jul 15 2022
+
+
+*SELL ITEMS THEN PRINT LIST OF PRODUCTS*
+
+Description: non-perishable item 1
+Supplier code: 1
+Number of items: 199
+Date supplied: Sat Jul 31 2021
+Price per item: R207.8
+Product code: 1001
+
+Description: perishable item 2
+Supplier code: 2
+Number of items: 217
+Date supplied: Sat Jul 31 2021
+Price per item: R314.63
+Product code: 2001
+Sell by date: Thu Nov 4 2021
+
+Description: non-perishable item 3
+Supplier code: 3
+Number of items: 169
+Date supplied: Sat Jul 31 2021
+Price per item: R177.55
+Product code: 3001
+
+Description: perishable item 4
+Supplier code: 4
+Number of items: 440
+Date supplied: Sat Jul 31 2021
+Price per item: R93.51
+Product code: 4001
+Sell by date: Wed Apr 6 2022
+
+Description: non-perishable item 5
+Supplier code: 5
+Number of items: 527
+Date supplied: Sat Jul 31 2021
+Price per item: R40.69
+Product code: 5001
+
+Description: perishable item 6
+Supplier code: 6
+Number of items: 210
+Date supplied: Sat Jul 31 2021
+Price per item: R231.21
+Product code: 6001
+Sell by date: Fri Mar 18 2022
+
+Description: non-perishable item 7
+Supplier code: 7
+Number of items: 822
+Date supplied: Sat Jul 31 2021
+Price per item: R275.42
+Product code: 7001
+
+Description: perishable item 8
+Supplier code: 8
+Number of items: 755
+Date supplied: Sat Jul 31 2021
+Price per item: R234.6
+Product code: 8001
+Sell by date: Thu Dec 9 2021
+
+Description: non-perishable item 9
+Supplier code: 9
+Number of items: 322
+Date supplied: Sat Jul 31 2021
+Price per item: R86.49
+Product code: 9001
+
+Description: perishable item 10
+Supplier code: 10
+Number of items: 885
+Date supplied: Sat Jul 31 2021
+Price per item: R120.11
+Product code: 10001
+Sell by date: Fri Jul 15 2022
+
+
+*REMOVE NON-PERISHABLE PRODUCTS THEN PRINT LIST OF PRODUCTS*
+
+Description: non-perishable item 1
+Supplier code: 1
+Number of items: 0
+Date supplied: Sat Jul 31 2021
+Price per item: R207.8
+Product code: 1001
+
+Description: perishable item 2
+Supplier code: 2
+Number of items: 217
+Date supplied: Sat Jul 31 2021
+Price per item: R314.63
+Product code: 2001
+Sell by date: Thu Nov 4 2021
+
+Description: non-perishable item 3
+Supplier code: 3
+Number of items: 0
+Date supplied: Sat Jul 31 2021
+Price per item: R177.55
+Product code: 3001
+
+Description: perishable item 4
+Supplier code: 4
+Number of items: 440
+Date supplied: Sat Jul 31 2021
+Price per item: R93.51
+Product code: 4001
+Sell by date: Wed Apr 6 2022
+
+Description: non-perishable item 5
+Supplier code: 5
+Number of items: 0
+Date supplied: Sat Jul 31 2021
+Price per item: R40.69
+Product code: 5001
+
+Description: perishable item 6
+Supplier code: 6
+Number of items: 210
+Date supplied: Sat Jul 31 2021
+Price per item: R231.21
+Product code: 6001
+Sell by date: Fri Mar 18 2022
+
+Description: non-perishable item 7
+Supplier code: 7
+Number of items: 0
+Date supplied: Sat Jul 31 2021
+Price per item: R275.42
+Product code: 7001
+
+Description: perishable item 8
+Supplier code: 8
+Number of items: 755
+Date supplied: Sat Jul 31 2021
+Price per item: R234.6
+Product code: 8001
+Sell by date: Thu Dec 9 2021
+
+Description: non-perishable item 9
+Supplier code: 9
+Number of items: 0
+Date supplied: Sat Jul 31 2021
+Price per item: R86.49
+Product code: 9001
+
+Description: perishable item 10
+Supplier code: 10
+Number of items: 885
+Date supplied: Sat Jul 31 2021
+Price per item: R120.11
+Product code: 10001
+Sell by date: Fri Jul 15 2022

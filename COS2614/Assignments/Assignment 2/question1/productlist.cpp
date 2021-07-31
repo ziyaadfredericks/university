@@ -56,18 +56,3 @@ bool ProductList::codeUsed(int pc) {
 	}
 	return false;
 }
-
-void ProductList::printAll() {
-	ProductList::iterator i;
-	int j = 0;
-	for (i = this->begin(); i != this->end(); ++i) {
-		if (j % 2 == 0) {
-			Product *product = *i;
-			std::cout << product->toString().toStdString() << "\n\n";
-		} else {
-			FoodProduct *product = (FoodProduct *) *i;
-			std::cout << product->toString().toStdString() << "\n";
-		}
-		j++;
-	}
-}

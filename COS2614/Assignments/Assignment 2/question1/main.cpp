@@ -1,10 +1,10 @@
 #include <QCoreApplication>
-#include "Transaction.h"
-#include "FoodProduct.h"
-#include "Product.h"
-#include "ProductList.h"
+#include "transaction.h"
+#include "foodproduct.h"
+#include "product.h"
+#include "productlist.h"
 
-// I used the following libraries because QRandomGenerator did not seem to work when I tested it with the prescribed version of Qt.
+#include <iostream>
 #include <stdlib.h>
 #include <time.h>
 
@@ -12,12 +12,11 @@ void addProducts(ProductList *productList) {
 	//	Add 10 random perishable and non-perishable items to the list of available products.
 	//	The number of items, price of those items, and the sell by dates will all be randomly generated.
 
+	srand((unsigned) time(0));
 	for (int i = 0; i < 10; ++i) {
-		srand(time(NULL) + i); // Adding "i" because srand does not produce a different psuedo-random number due to the for-loop executing its next iteration before the system time changes?
-
-		int numberOfItems = rand() % 1000 + 100;
-		double price = (rand() % 50000 + 100) / 100.00;
-		QDate sellByDate = QDate::currentDate().addDays(rand() % 365 + 7);
+		int numberOfItems = (rand() % 1000) + 100;
+		double price = ((rand() % 50000) + 100) / 100.00;
+		QDate sellByDate = QDate::currentDate().addDays((rand() % 365) + 7);
 
 		if (i % 2 == 0) {
 			productList->add(new Product("non-perishable item " + QString::number(i + 1), i + 1, numberOfItems, price));
@@ -31,7 +30,7 @@ void sellProducts(ProductList *productList) {
 	//	The number of items will be randomly generated, within the bounds of the possible number of items.
 	for (int i = 0; i < 10; ++i) {
 		srand(time(NULL) + i);
-		productList->sell(((i + 1) * 1000) + 1, rand() % 100 + 1);
+		productList->sell(((i + 1) * 1000) + 1, (rand() % 100) + 1);
 	}
 }
 
@@ -42,20 +41,52 @@ void removeProducts(ProductList *productList) {
 	}
 }
 
+void heading() {
+	for (int i = 0; i < 65; ++i) {
+		std::cout << "*";
+	}
+
+	std::cout<< "\n* MZ Fredericks \n* 11303867 \n* COS2614 \n* Assignment 2 \n* This program will test all member functions of ProductList." << std::endl;
+
+	for (int i = 0; i < 65; ++i) {
+		std::cout << "*";
+	}
+
+	std::cout << "\n\n\n";
+}
+
+void printAll(ProductList *productList) {
+	int j = 0;
+	for (ProductList::const_iterator i = productList->constBegin(); i != productList->constEnd(); ++i) {
+		if (j % 2 == 0) {
+			Product *product = *i;
+			std::cout << product->toString().toStdString() << "\n\n";
+		} else {
+			FoodProduct *product = (FoodProduct *) *i;
+			std::cout << product->toString().toStdString() << "\n";
+		}
+		j++;
+	}
+}
+
 int main(int argc, char *argv[]) {
 	QCoreApplication a(argc, argv);
 
+	heading();
+
 	ProductList productList;
 
+	std::cout << "*ADD PRODUCTS TO LIST THEN PRINT LIST OF PRODUCTS*" << "\n\n";
 	addProducts(&productList);
+	printAll(&productList);
 
-	productList.printAll();
-
+	std::cout << "\n*SELL ITEMS THEN PRINT LIST OF PRODUCTS*" << "\n\n";
 	sellProducts(&productList);
+	printAll(&productList);
 
+	std::cout << "\n*REMOVE NON-PERISHABLE PRODUCTS THEN PRINT LIST OF PRODUCTS*" << "\n\n";
 	removeProducts(&productList);
-
-	productList.printAll();
+	printAll(&productList);
 
 	productList.deleteAll();
 

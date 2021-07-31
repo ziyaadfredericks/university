@@ -3,7 +3,7 @@
 
 #include "product.h"
 
-class ProductList : QList<Product *> {
+class ProductList : public QList<Product *> {
 public:
 	int add(Product *p);
 
