@@ -29,16 +29,16 @@ QString convertToBin (int num) {
 QString convertToHex (int num) {
 	QString hexString = "";
 
-	char hexaDeciNum[100];
+	char hexArray[8];
 
 	int i = 0;
 	while (num != 0) {
 	  int remainder = num % 16;
 
 	  if (remainder < 10) {
-		hexaDeciNum[i] = remainder + 48;
+		hexArray[i] = remainder + 48;
 	  } else {
-		hexaDeciNum[i] = remainder + 55;
+		hexArray[i] = remainder + 55;
 	  }
 
 	  i++;
@@ -46,9 +46,8 @@ QString convertToHex (int num) {
 	  num = num / 16;
 	}
 
-	// printing hexadecimal number array in reverse order
 	for (int j = i - 1; j >= 0; j--) {
-		hexString.append(hexaDeciNum[j]);
+		hexString.append(hexArray[j]);
 	}
 
 	return hexString;
@@ -75,5 +74,5 @@ void MainWindow::on_binaryLCD_overflow()
 
 void MainWindow::on_hexLCD_overflow()
 {
-
+// Do nothing.
 }
