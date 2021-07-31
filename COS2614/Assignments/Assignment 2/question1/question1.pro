@@ -15,4 +15,14 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    product.cpp \
+    transaction.cpp \
+    foodproduct.cpp \
+    productlist.cpp
+
+HEADERS += \
+    product.h \
+    transaction.h \
+    foodproduct.h \
+    productlist.h
